@@ -1,0 +1,14 @@
+@import "~bootstrap/scss/bootstrap";
+
+$primary: #383838;
+$primary-text: #6d6d6d;
+
+body {
+  background-color: $primary;
+  color: $primary-text
+}
+
+.app {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
