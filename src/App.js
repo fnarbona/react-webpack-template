@@ -2,25 +2,30 @@ import React, { useEffect, useRef } from "react";
 import * as tf from '@tensorflow/tfjs';
 import * as facemesh from '@tensorflow-models/face-landmarks-detection';
 import Webcam from 'react-webcam';
-// import { hot } from "react-hot-loader";
+import { hot } from "react-hot-loader";
 import "./App.scss";
 import 'bootstrap';
 
 const App = () => {
-  // useEffect(() => {
-  //   // runFacemesh();
-  // })
+  useEffect(() => {
+    runFacemesh();
+  })
+
+  const resolution = {
+    height: "480px",
+    width: "640px"
+  }
 
   // // setup references
   const webcamRef = useRef(null)
   const canvasRef = useRef(null)
-
+  
   // load facemesh
   const runFacemesh = async () => {
     const model = await facemesh.load({
       inputResolution: { width: 640, height: 480 }, scale: 0.8
     })
-    // setInterval(() => detect(model), 100)
+    setInterval(() => detect(model), 100)
   }
 
   // detect
@@ -54,12 +59,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>FaceMesh</h1>
-      <Webcam ref={webcamRef} />
-      <canvas ref={canvasRef} />
+      <div className="d-flex flex-column justify-content-center align-items-center pt-5">
+        <h1>FaceMesh</h1>
+        <Webcam ref={webcamRef} style={resolution}/>
+        <canvas ref={canvasRef} style={resolution}/>
+      </div>
     </div>
   )
 };
 
 // export default hot(module)(App);
-export default App;
+export default hot(module)(App);
