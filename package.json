@@ -1,7 +1,7 @@
 {
-  "name": "facemesh",
+  "name": "react-webpack-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "simple webpack configuration with sass and postcss loader and react front-end",
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --mode development",
@@ -11,13 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "@popperjs/core": "^2.9.2",
-    "@tensorflow-models/face-landmarks-detection": "^0.0.3",
-    "@tensorflow/tfjs": "^3.7.0",
     "bootstrap": "^5.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-hot-loader": "^4.13.0",
-    "react-webcam": "^5.2.4"
+    "react-hot-loader": "^4.13.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.5",
